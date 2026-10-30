@@ -1,0 +1,19 @@
+{
+  "IDAMetadataDescriptorVersion": 1,
+  "plugin": {
+    "name": "riscv-p",
+    "entryPoint": "riscv_p.py",
+    "version": "0.9.0",
+    "idaVersions": ["9.5"],
+    "description": "Disassemble RISC-V P revision 0.6 and T-Head E907 P v0.9. Lift add64 as a 64-bit add and other P instructions as Hex-Rays helper calls.",
+    "license": "MIT",
+    "platforms": ["windows-x86_64", "linux-x86_64", "macos-x86_64", "macos-aarch64"],
+    "categories": ["processor-modules"],
+    "urls": {
+      "repository": "https://github.com/liert/RISCV-DSP-Extension"
+    },
+    "authors": [
+      {"name": "liert"}
+    ]
+  }
+}
