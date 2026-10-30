@@ -21,7 +21,7 @@ New-Item -ItemType Junction -Path "$env:APPDATA\Hex-Rays\IDA Pro\plugins\riscv-p
 重启 IDA 后打开 RISC-V 文件。输出窗口里应出现：
 
 ```text
-riscv-p: loaded P 0.6 (ec309f35), 609 instructions; P v0.9.11 (1bcac751), 360 instructions.
+riscv-p: loaded P 0.6 (85857f3e), 609 instructions; P v0.9.11 (1bcac751), 360 instructions.
 ```
 
 已经分析过的数据库不会自动重解。用 **Edit → Plugins → RISC-V P extension** 重新分析可执行段里现有的代码。新打开的文件会在自动分析时经过这个钩子。
@@ -30,7 +30,7 @@ riscv-p: loaded P 0.6 (ec309f35), 609 instructions; P v0.9.11 (1bcac751), 360 in
 
 只属于某一档 XLEN 的指令不会在另一档被认出来。
 
-草案 0.6 来自 [P-ext-proposal.adoc](https://github.com/riscv/riscv-p-spec/blob/ec309f351cb9ec1c0ea6a8e90fc1ffafc7064b42/P-ext-proposal.adoc)，是 [riscv-p-spec](https://github.com/riscv/riscv-p-spec) 的内部评审稿 revision 0.6（Development Milestone，2026-09-28 通过）。`pli.db` 只在 RV32，`pli.w` 只在 RV64。
+草案 0.6 是 [riscv-p-spec 的 v0.6 发布](https://github.com/riscv/riscv-p-spec/releases/tag/v0.6)（Development Milestone，2026-09-28 通过）。正文在 [P-ext-proposal.adoc](https://github.com/riscv/riscv-p-spec/blob/v0.6/P-ext-proposal.adoc)。`pli.db` 只在 RV32，`pli.w` 只在 RV64。
 
 P v0.9 的编码表来自 [opcodes/riscv-opc.c](https://github.com/ruyisdk/riscv-binutils/blob/1bcac7513f9faa4cd969f8dc7cf2491b6c22d7db/opcodes/riscv-opc.c)，也就是 [riscv-p-spec 的 Historical implementations](https://github.com/riscv/riscv-p-spec#historical-implementations) 里列出的 P v0.9.11 binutils。平头哥公开资料把 E907 的 DSP 标成 P v0.9.4，`add64` 的编码与这张表一致。`add64`、`sub64` 只在 RV32，`clz32` 只在 RV64。字节 `77 17 E6 C0` 按小端读是 `0xC0E61777`，在 RV32 上是 `add64 a4, a2, a4`。
 
@@ -64,7 +64,7 @@ else
 
 `riscv_p_data.py` 和 `riscv_p09_data.py` 是生成文件，不要手改。
 
-草案 0.6 下载 [P-ext-proposal.adoc](https://github.com/riscv/riscv-p-spec/blob/ec309f351cb9ec1c0ea6a8e90fc1ffafc7064b42/P-ext-proposal.adoc)，然后：
+草案 0.6 下载 [v0.6 的 P-ext-proposal.adoc](https://github.com/riscv/riscv-p-spec/blob/v0.6/P-ext-proposal.adoc)，然后：
 
 ```powershell
 python tools\extract_p_encodings.py P-ext-proposal.adoc riscv_p_data.py

@@ -1,12 +1,13 @@
 """Generated RISC-V P-extension encoding table. Do not edit by hand.
 
-Source: RISC-V Packed SIMD Extension, revision 0.6, commit ec309f351cb9ec1c0ea6a8e90fc1ffafc7064b42.
-https://github.com/riscv/riscv-p-spec
+Source: RISC-V Packed SIMD Extension, revision 0.6, tag v0.6,
+commit 85857f3eb17f93ba7076df6e6dab5568050d95e0.
+https://github.com/riscv/riscv-p-spec/blob/v0.6/P-ext-proposal.adoc
 Specification text is (c) RISC-V International, licensed CC-BY-4.0.
 """
 
 SPEC_VERSION = "0.6"
-SPEC_COMMIT = "ec309f351cb9ec1c0ea6a8e90fc1ffafc7064b42"
+SPEC_COMMIT = "85857f3eb17f93ba7076df6e6dab5568050d95e0"
 KIND_REG = 0
 KIND_PAIR = 1
 KIND_IMM = 2
